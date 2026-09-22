@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560">
+  <rect width="760" height="560" fill="#fafaf8"/>
+  <text x="380" y="30" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Portfolio Sitemap — "I ship AI-assisted things."</text>
+  <text x="380" y="50" font-family="Segoe UI, sans-serif" font-size="13" text-anchor="middle" fill="#666">One person: FlyRank reviewer · One action: try the live project</text>
+
+  <!-- HOME -->
+  <rect x="80" y="90" width="220" height="130" rx="10" fill="#1a1a1a"/>
+  <text x="190" y="120" font-family="Segoe UI" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">HOME</text>
+  <text x="190" y="145" font-family="Segoe UI" font-size="12" text-anchor="middle" fill="#e8e8e8">Hero: the claim in one line</text>
+  <text x="190" y="165" font-family="Segoe UI" font-size="12" text-anchor="middle" fill="#e8e8e8">big CTA button</text>
+  <rect x="130" y="178" width="120" height="26" rx="13" fill="#f5a623"/>
+  <text x="190" y="196" font-family="Segoe UI" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">TRY THE LIVE PROJECT →</text>
+
+  <!-- PROJECTS -->
+  <rect x="470" y="90" width="220" height="190" rx="10" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="580" y="120" font-family="Segoe UI" font-size="16" font-weight="bold" text-anchor="middle" fill="#1a1a1a">PROJECTS</text>
+  <text x="580" y="145" font-family="Segoe UI" font-size="12" text-anchor="middle" fill="#333">Case 1 — LIVE (pinned)</text>
+  <rect x="505" y="155" width="150" height="24" rx="12" fill="#f5a623"/>
+  <text x="580" y="172" font-family="Segoe UI" font-size="10" font-weight="bold" text-anchor="middle" fill="#1a1a1a">TRY IT NOW</text>
+  <text x="580" y="205" font-family="Segoe UI" font-size="12" text-anchor="middle" fill="#333">Case 2 — one paragraph</text>
+  <text x="580" y="225" font-family="Segoe UI" font-size="12" text-anchor="middle" fill="#333">+ embedded preview /</text>
+  <text x="580" y="243" font-family="Segoe UI" font-size="12" text-anchor="middle" fill="#333">30-sec clip of the build</text>
+
+  <!-- ABOUT -->
+  <rect x="80" y="330" width="220" height="110" rx="10" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="190" y="360" font-family="Segoe UI" font-size="16" font-weight="bold" text-anchor="middle" fill="#1a1a1a">ABOUT (short)</text>
+  <text x="190" y="385" font-family="Segoe UI" font-size="12" text-anchor="middle" fill="#333">6 lines max</text>
+  <text x="190" y="405" font-family="Segoe UI" font-size="12" text-anchor="middle" fill="#333">human-in-the-loop standard</text>
+  <text x="190" y="425" font-family="Segoe UI" font-size="12" text-anchor="middle" fill="#333">back to Projects</text>
+
+  <!-- footer note -->
+  <text x="380" y="480" font-family="Segoe UI" font-size="13" text-anchor="middle" fill="#666">Footer on every page: one-line email/DM  (no separate Contact page)</text>
+  <text x="380" y="520" font-family="Segoe UI" font-size="13" font-weight="bold" text-anchor="middle" fill="#a33015">CUT: Blog · Tools/stack page · Resume page — none prove 'shipping'</text>
+
+  <!-- arrows -->
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#888"/></marker></defs>
+  <line x1="300" y1="170" x2="470" y2="170" stroke="#888" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="190" y1="220" x2="190" y2="330" stroke="#888" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="580" y1="280" x2="300" y2="180" stroke="#888" stroke-width="2" marker-end="url(#arr)" stroke-dasharray="4,4"/>
+</svg>
