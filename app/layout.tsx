@@ -3,7 +3,7 @@ import { IBM_Plex_Mono, Space_Grotesk } from 'next/font/google';
 import Link from 'next/link';
 import './globals.css';
 
-type AppRoute = '/' | '/projects' | '/about' | '/chat';
+type AppRoute = '/' | '/projects' | '/about' | '/chat' | '/buttons';
 
 const display = Space_Grotesk({
   subsets: ['latin'],
@@ -18,7 +18,7 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: 'Omar | I ship AI-assisted things',
-  description: 'A portfolio built to prove the claim with a live project, two case studies, and a clear retry path.'
+  description: 'A portfolio built to prove the claim with a live project, stateful button motion system, and clear error handling.'
 };
 
 export const viewport = {
@@ -30,9 +30,10 @@ export const viewport = {
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/projects', label: 'Projects' },
+  { href: '/buttons', label: 'Buttons System' },
   { href: '/about', label: 'About' },
   { href: '/chat', label: 'Live project' }
-] as const satisfies ReadonlyArray<{ href: AppRoute; label: string }>;
+] as const satisfies ReadonlyArray<{ href: string; label: string }>;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

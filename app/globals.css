@@ -795,3 +795,230 @@ h1 {
     max-width: 100%;
   }
 }
+
+/* ==========================================================================
+   Buttons with a Brain - Motion System & State Choreography
+   ========================================================================== */
+
+.brain-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 650;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  white-space: nowrap;
+  outline: none;
+  transition:
+    transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    color 180ms ease,
+    opacity 180ms ease;
+  will-change: transform, opacity;
+}
+
+/* Sizes */
+.brain-btn-sm {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  min-height: 36px;
+}
+
+.brain-btn-md {
+  padding: 12px 20px;
+  font-size: 0.96rem;
+  min-height: 44px;
+}
+
+.brain-btn-lg {
+  padding: 15px 26px;
+  font-size: 1.05rem;
+  min-height: 52px;
+}
+
+/* Variants */
+.brain-btn-primary {
+  background: linear-gradient(135deg, var(--accent), #d96b33);
+  color: #fff8f0;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 24px rgba(184, 77, 40, 0.22);
+}
+
+.brain-btn-secondary {
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text);
+  border-color: rgba(29, 23, 18, 0.12);
+  box-shadow: 0 4px 14px rgba(29, 23, 18, 0.05);
+}
+
+.brain-btn-accent {
+  background: linear-gradient(135deg, #1d1712, #3d3027);
+  color: #fffaf1;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 24px rgba(29, 23, 18, 0.2);
+}
+
+/* Content & Icon Layout */
+.brain-btn-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.brain-btn-icon-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1), opacity 220ms ease;
+  flex-shrink: 0;
+}
+
+.brain-btn-icon-slot .icon {
+  width: 100%;
+  height: 100%;
+}
+
+.brain-btn-label {
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+/* Hover & Active States */
+.brain-btn:hover:not(:disabled):not(.state-loading) {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(184, 77, 40, 0.3);
+}
+
+.brain-btn-secondary:hover:not(:disabled):not(.state-loading) {
+  background: #ffffff;
+  border-color: rgba(29, 23, 18, 0.2);
+  box-shadow: 0 8px 20px rgba(29, 23, 18, 0.1);
+}
+
+.brain-btn:active:not(:disabled):not(.state-loading) {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 4px 10px rgba(29, 23, 18, 0.12);
+}
+
+/* Focus Visible */
+.brain-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(184, 77, 40, 0.22);
+}
+
+/* State: Loading */
+.state-loading {
+  cursor: wait;
+  opacity: 0.9;
+}
+
+.state-loading .icon-spinner {
+  animation: spinner-rotate 0.9s linear infinite;
+}
+
+/* State: Success */
+.state-success {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 12px 28px rgba(46, 125, 50, 0.3) !important;
+}
+
+.state-success .icon-check {
+  animation: pop-in 340ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* State: Error */
+.state-error {
+  background: linear-gradient(135deg, #c62828, #9a0007) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 12px 28px rgba(198, 40, 40, 0.3) !important;
+  animation: btn-shake 420ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.state-error .icon-alert {
+  animation: pop-in 340ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* State: Disabled */
+.state-disabled,
+.brain-btn:disabled {
+  opacity: 0.52;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Animations */
+@keyframes spinner-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.2) rotate(-15deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes btn-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .brain-btn,
+  .brain-btn-icon-slot,
+  .brain-btn-label {
+    transition: opacity 100ms ease, background 100ms ease, color 100ms ease !important;
+  }
+
+  .brain-btn:hover:not(:disabled),
+  .brain-btn:active:not(:disabled) {
+    transform: none !important;
+  }
+
+  .state-error {
+    animation: none !important;
+  }
+
+  .state-success .icon-check,
+  .state-error .icon-alert {
+    animation: none !important;
+  }
+}
