@@ -52,7 +52,7 @@ describe('ChatRoom Component (React Testing Library)', () => {
   it('validates empty input form submission without invoking API', () => {
     render(<ChatRoom />);
 
-    const sendButton = screen.getAllByRole('button', { name: /^Send$/i })[0];
+    const sendButton = screen.getByRole('button', { name: /Send/i });
     fireEvent.click(sendButton);
 
     // Assert that empty input notice is displayed via status role
@@ -66,10 +66,10 @@ describe('ChatRoom Component (React Testing Library)', () => {
   it('submits typed prompt when form is submitted with non-empty input', async () => {
     render(<ChatRoom />);
 
-    const inputArea = screen.getAllByRole('textbox', { name: /Chat input/i })[0];
+    const inputArea = screen.getByRole('textbox', { name: /Chat input/i });
     fireEvent.change(inputArea, { target: { value: 'Show me the clean run.' } });
 
-    const sendButton = screen.getAllByRole('button', { name: /^Send$/i })[0];
+    const sendButton = screen.getByRole('button', { name: /Send/i });
     fireEvent.click(sendButton);
 
     await waitFor(() => {

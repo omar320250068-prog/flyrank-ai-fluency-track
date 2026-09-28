@@ -255,7 +255,7 @@ export function ChatRoom() {
             ) : null}
           </div>
 
-          <form className="composer" onSubmit={handleSubmit}>
+          <form className="composer" onSubmit={handleSubmit} aria-label="Message composer">
             {emptyHint ? (
               <p className="empty-note" role="status">
                 Empty input is blocked. Try “Show me the clean run” or pick an example.
@@ -276,11 +276,11 @@ export function ChatRoom() {
               />
               <div className="composer-buttons">
                 {isPending ? (
-                  <button className="button-secondary" type="button" onClick={() => stop()}>
+                  <button className="button-secondary" type="button" onClick={() => stop()} aria-label="Stop response generation">
                     Stop
                   </button>
                 ) : (
-                  <button className="button" type="submit" disabled={retryLocked}>
+                  <button className="button" type="submit" disabled={retryLocked} aria-label="Send message">
                     Send
                   </button>
                 )}

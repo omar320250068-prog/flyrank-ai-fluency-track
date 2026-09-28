@@ -5,8 +5,8 @@
   --panel: rgba(255, 255, 255, 0.72);
   --panel-strong: #fffaf1;
   --text: #1d1712;
-  --muted: #64584d;
-  --line: rgba(29, 23, 18, 0.12);
+  --muted: #54483d;
+  --line: rgba(29, 23, 18, 0.16);
   --accent: #b84d28;
   --accent-strong: #7d2a12;
   --accent-soft: #f7d7c8;
@@ -49,6 +49,16 @@ button,
 input,
 textarea {
   font: inherit;
+}
+
+/* Universal Accessible Focus Visible Outline */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 5px rgba(184, 77, 40, 0.28) !important;
 }
 
 ::selection {
