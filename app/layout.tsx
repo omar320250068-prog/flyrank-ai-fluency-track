@@ -3,7 +3,7 @@ import { IBM_Plex_Mono, Space_Grotesk } from 'next/font/google';
 import Link from 'next/link';
 import './globals.css';
 
-type AppRoute = '/' | '/projects' | '/about' | '/chat' | '/buttons';
+type AppRoute = '/' | '/projects' | '/about' | '/chat' | '/buttons' | '/3d';
 
 const display = Space_Grotesk({
   subsets: ['latin'],
@@ -18,7 +18,7 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: 'Omar | I ship AI-assisted things',
-  description: 'A portfolio built to prove the claim with a live project, stateful button motion system, and clear error handling.'
+  description: 'A portfolio built to prove the claim with a live project, 3D WebGL stage, button motion system, and clear error handling.'
 };
 
 export const viewport = {
@@ -31,6 +31,7 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/projects', label: 'Projects' },
   { href: '/buttons', label: 'Buttons System' },
+  { href: '/3d', label: '3D Stage' },
   { href: '/about', label: 'About' },
   { href: '/chat', label: 'Live project' }
 ] as const satisfies ReadonlyArray<{ href: string; label: string }>;
