@@ -8,6 +8,7 @@ export default defineConfig({
     }
   },
   test: {
-    environment: 'node'
+    environment: 'happy-dom',
+    exclude: ['node_modules', '.next', 'e2e/**']
   }
 });

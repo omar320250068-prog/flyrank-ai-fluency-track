@@ -47,7 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </Link>
             <nav className="nav" aria-label="Primary">
               {navItems.map(item => (
-                <Link key={item.href} href={item.href}>
+                <Link key={item.href} href={item.href as '/chat'}>
                   {item.label}
                 </Link>
               ))}
